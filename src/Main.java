@@ -1,13 +1,16 @@
-class Outer {
-    static class StaticInner {
-        void hello() {
-            System.out.println("Hi!");
-        }
-    }
+interface Greeting{
+    void greet();
 }
+
 public class Main {
     public static void main(String[] args) {
-        Outer.StaticInner inner = new Outer.StaticInner();
-        inner.hello();
+        Greeting greeting = new Greeting() {
+            @Override
+            public void greet() {
+                System.out.println("Anonymous Class");
+            }
+        };
+
+        greeting.greet();
     }
 }
